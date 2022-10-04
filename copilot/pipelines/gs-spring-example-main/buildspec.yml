@@ -20,6 +20,7 @@ phases:
       - docker build -t moornmo/api .
       - docker tag moornmo/api:latest 566034038752.dkr.ecr.us-west-2.amazonaws.com/moornmo/api:latest
       - docker push 566034038752.dkr.ecr.us-west-2.amazonaws.com/moornmo/api:latest
+      - ls build/libs
       # - make test
   post_build:
     commands:
