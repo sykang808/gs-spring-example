@@ -15,7 +15,7 @@ phases:
   build:
     commands:
       - echo "Run your tests"
-      - ./gradlew build
+      - docker build --build-arg JAR_FILE=build/libs/\*.jar -t springio/gs-spring-boot-docker .
       # - make test
   post_build:
     commands:
