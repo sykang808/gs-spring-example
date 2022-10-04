@@ -47,8 +47,6 @@ phases:
       # We truncate the tag (from the front) to 128 characters, the limit for Docker tags
       # (https://docs.docker.com/engine/reference/commandline/tag/)
       # Check if the `svc package` commanded exited with a non-zero status. If so, echo error msg and exit.
-      - echo ${pl_envs}
-      - echo ${CODEBUILD_BUILD_ID##*:}-${env}
       - >
         for env in $pl_envs; do
           tag=$(sed 's/:/-/g' <<<"${CODEBUILD_BUILD_ID##*:}-${env}" | rev | cut -c 1-128 | rev)
