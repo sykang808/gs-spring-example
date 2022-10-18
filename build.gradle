@@ -16,7 +16,11 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
-
+bootJar{
+    archivesBaseName = 'ecs-example'
+    archiveFileName = 'ecs-spring-sykang.jar'
+    archiveVersion = "0.0.1"
+}
 test {
 	useJUnitPlatform()
 }
